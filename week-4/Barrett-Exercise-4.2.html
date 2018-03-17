@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--
+ Title: Exercise 4.2
+ Author: Richard Krasso
+ Date: 3 16 2018
+ Modified By: Mary Barrett
+ Description: This code the modified starter code by Professor Krasso.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment name</title>
+    <!--jQuery reference-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        $(function () {
+            // https://github.com/toddmotto/public-apis/blob/master/README.md
+            $('#get1').click(function () {
+                $.ajax({
+                    url: "https://dog.ceo/api/breeds/list/all",
+                    dataType: "json",
+                    type: "GET",
+                    success: function (data) {
+                        console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<h4>HTTP GET</h4>
+<button id="get1">Get Puppies</button>

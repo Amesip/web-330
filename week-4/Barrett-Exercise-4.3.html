@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!--
+ Title: Exercise 4.3
+ Author: Richard Krasso
+ Date: 3 16 2018
+ Modified By: Mary Barrett
+ Description: This code the modified starter code by Professor Krasso.
+-->
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Assignment name</title>
+	<!--jQuery reference-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<hr/>
+	<h4>HTTP DELETE</h4>
+	<button id="delete7">Delete Information</button>
+	<br/>
+	<script type="text/javascript">
+		$(function () {
+			$('#delete7').click(function () {
+				$.ajax({
+					url: "http://httpbin.org/delete",
+					dataType: "json",
+					type: "DELETE",
+					data: { puppies: "woof", kittens: "meow", lambs: "baa" },
+					success: function (data, status) {
+						console.log("Puppies: " + data.form.puppies + "\nKittens: " +
+							data.form.kittens + "\nStatus: " + status + "\nLambs: " + data.form.lambs);
+					}
+				})
+			});
+		});
+	</script>
+</body>
+
+</html>
