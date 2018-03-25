@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<!--
+ Title: Exercise 5.2
+ Author: Richard Krasso
+ Date: 3 23 2018
+ Modified By: Mary Barrett
+ Description: This code the modified starter code by Professor Krasso.
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+    <!--jquery Reference Library-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <h2>Proxy Example 1</h2>
+    <button id="btnExample1">Run test</button>
+    <br />
+    <span id="proxyExampleOne"></span>
+    <script>
+        var truck = {
+            favoriteDog: "Oscar",
+            favoriteCat: "Bucky",
+            display: function () {
+                $("#proxyExampleOne").html("");
+                $("#proxyExampleOne").append("<br />Favorite Dog: " + this.favoriteDog + "<br />" + "Favorite Cat: "
+                    + this.favoriteCat);
+            }
+        };
+    </script>
+</body>
+
+</html>
