@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<!--
+ Title: Assignment 7.4
+ Author: Richard Krasso
+ Date: 4 6 2018
+ Modified By: Mary Barrett
+ Description: This code the modified starter code by Professor Krasso.
+-->
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Exercise 7.4</title>
+    <!--Stylesheet - Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <!--JavaScript Libraries-->
+    <script src="../knockout-3.4.2.js"></script>
+</head>
+
+<body>
+    <div role="main" class="container">
+        <br/>
+        <br/>
+        <h2>The "foreach" binding</h2>
+        <table class="table table-info table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>URL</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: tutorial">
+                <tr>
+                    <td data-bind="text: title"></td>
+                    <td data-bind="text: description"></td>
+                    <td><a data-bind="text: url, attr:{href: url}, style: {color: 'black'}" target="_blank"></a></td>
+                </tr>
+            </tbody>
+        </table>
+        <br/>
+    </div>
+    <script>
+        function TutorialViewModel() {
+            this.tutorial = ko.observableArray([
+                { url: "https://www.w3schools.com/js/js_output.asp", title: "JavaScript Output", description: "JavaScript can display data in different ways." },
+                { url: "https://www.w3schools.com/js/js_statements.asp", title: "JavaScript Statements", description: "A JavaScript program is a list of programming statements." },
+                { url: "https://www.w3schools.com/js/js_syntax.asp", title: "JavaScript Syntax", description: "JavaScript syntax is the set of rules, how JavaScript programs are constructed." },
+                { url: "https://www.w3schools.com/js/js_comments.asp", title: "JavaScript Comments", description: "JavaScript comments can be used to explain JavaScript code, and to make it more readable." },
+                { url: "https://www.w3schools.com/js/js_variables.asp", title: "JavaScript Variables", description: "JavaScript variables are containers for storing data values." }
+            ]);
+        }
+        ko.applyBindings(new TutorialViewModel());
+    </script>
+</body>
+
+</html>
